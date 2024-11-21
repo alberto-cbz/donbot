@@ -1,0 +1,94 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <%- include('../../partials/head'); %>
+
+        <!-- css -->
+        <% if(typeof sheets!=='undefined') { %>
+            <% for(let sheet of sheets) { %>
+                <link href="/css/<%= sheet %>.css" rel="stylesheet">
+            <% } %>
+        <% } %>
+    </head>
+
+    <body class="h-100">
+        <%- include('../../partials/header'); %>
+
+        <div class="container-fluid pb-3 h-100" style="padding-top: 90px;">
+            <div class="row w-100 h-100" style="flex-wrap:nowrap">
+                <%- include('../../partials/sidebar', {level:''}); %>
+
+                <main id="main-content" class="col overflow-auto">
+                    <div class="row">
+                        <div class="col">
+                            <h5>
+                                <i class="icon-user"></i>
+                                Mi cuenta
+                            </h5>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3 my-3">
+                        <div class="col">
+                            <div class="card border-light bg-primary shadow">
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row" style="margin-bottom: 10px;">
+                                            <div class="col">
+                                                    <label for="cc-cat-file" class="form-label text-white"><strong>Nombre</strong></label>
+                                                    <input class="form-control" type="input" id="me_name" name="cc-cat-file">
+                                                    <div id="cc-cat-help-loading" class="form-text text-white cc-cat-help d-none">Cargando...</div>
+                                                    <div id="cc-cat-help-error" class="form-text text-white cc-cat-help d-none">Ocurrió un error</div>
+                                                    <div id="cc-cat-help-success" class="form-text text-white cc-cat-help d-none">Listo!</div>
+                                                
+                                            </div>
+
+                                            <div class="col">
+                                                    <label for="cc-cat-file" class="form-label text-white"><strong>Apellido</strong></label>
+                                                    <input class="form-control" type="input" id="me_lastname" name="cc-catcust-file">
+                                                    <div id="cc-catcust-help-loading" class="form-text text-white cc-catcust-help d-none">Cargando...</div>
+                                                    <div id="cc-catcust-help-error" class="form-text text-white cc-catcust-help d-none">Ocurrió un error</div>
+                                                    <div id="cc-catcust-help-success" class="form-text text-white cc-catcust-help d-none">Listo!</div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 10px;">    
+                                            <div class="col">
+                                                    <label for="cc-cat-file" class="form-label text-white"><strong>Mail</strong></label>
+                                                    <input class="form-control" type="input" id="me_mail" name="cc-catsku-file">
+                                                    <div id="cc-catsku-help-loading" class="form-text text-white cc-catsku-help d-none">Cargando...</div>
+                                                    <div id="cc-catsku-help-error" class="form-text text-white cc-catsku-help d-none">Ocurrió un error</div>
+                                                    <div id="cc-catsku-help-success" class="form-text text-white cc-catsku-help d-none">Listo!</div>
+                                                
+                                            </div>
+                                            <div class="col">
+                                                    <label for="cc-cat-file" class="form-label text-white"><strong>Nuevo Password (Min 6 Caracteres)</strong></label>
+                                                    <input class="form-control" type="password" id="me_pass" name="cc-catsku-file" autocomplete="new-password">
+                                                    <div id="cc-catsku-help-loading" class="form-text text-white cc-catsku-help d-none">Cargando...</div>
+                                                    <div id="cc-catsku-help-error" class="form-text text-white cc-catsku-help d-none">Ocurrió un error</div>
+                                                    <div id="cc-catsku-help-success" class="form-text text-white cc-catsku-help d-none">Listo!</div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 10px;">
+                                            <button class="w-100 btn btn-lg btnGbm" type="submit" id="btnSaveume">Guardar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <%- include('../../partials/modal') %>
+        
+        <% if(typeof libs!=='undefined') { %>
+            <% for(let lib of libs) { %>
+                <script src='/js/<%= lib %>.js' type='text/javascript'></script>
+            <% } %>
+        <% } %>
+    </body>
+</html>

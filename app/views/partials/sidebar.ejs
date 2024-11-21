@@ -1,0 +1,90 @@
+<nav class="col-sm-2 flex-grow-sm-1 flex-shrink-1 flex-grow-0 pb-sm-0 pb-3 sidebar" style="height: 100%; max-height: 100%;">
+    <div class="border rounded-3 p-1 h-100 sticky-top bg-dark">
+        <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate mb-auto position-sticky">
+            <li class="nav-item">
+                <a href="<%=level%>home" class="nav-link px-2 text-truncate text-white text-decoration-none">
+                    <small>
+                        <i class="icon-home"></i>
+                        <span class="d-none d-sm-inline"> Inicio</span>
+                    </small>
+                </a>
+            </li>
+
+            <li>
+                <a href="<%=level%>flows" class="nav-link px-2 text-truncate text-white text-decoration-none">
+                    <small>
+                        <i class="icon-fork"></i>
+                        <span class="d-none d-sm-inline"> Flujos</span>
+                    </small>
+                </a>
+            </li>
+
+            <li>
+                <a href="<%=level%>orders" class="nav-link px-2 text-truncate text-white text-decoration-none">
+                    <small>
+                        <i class="icon-basket"></i>
+                        <span class="d-none d-sm-inline"> Órdenes</span>
+                    </small>
+                </a>
+            </li>
+
+            <!-- <li>
+                <a href="<%=level%>quotations" class="nav-link px-2 text-truncate text-white text-decoration-none">
+                    <small>
+                        <i class="icon-dollar"></i>
+                        <span class="d-none d-sm-inline"> Cotizaciones</span>
+                    </small>
+                </a>
+            </li> -->
+            
+            <li>
+                <a href="<%=level%>logs" class="nav-link px-2 text-truncate text-white text-decoration-none">
+                    <small>
+                        <i class="icon-database"></i>
+                        <span class="d-none d-sm-inline"> Logs</span>
+                    </small>
+                </a>
+            </li>
+
+            <li>
+                <a href="<%=level%>logs_flows" class="nav-link px-2 text-truncate text-white text-decoration-none">
+                    <small>
+                        <i class="icon-clock"></i>
+                        <span class="d-none d-sm-inline"> Logs Flows</span>
+                    </small>
+                </a>
+            </li>
+
+            <hr />
+            
+            <li>
+                <a href="<%=level%>me" class="nav-link px-2 text-truncate text-white text-decoration-none">
+                    <small>
+                        <i class="icon-user"></i>
+                        <span class="d-none d-sm-inline"> Mi cuenta</span>
+                    </small>
+                </a>
+            </li>
+            <li>
+                <a href="<%=level%>mails_notification" class="nav-link px-2 text-truncate text-white text-decoration-none">
+                    <small>
+                        <i class="icon-users"></i>
+                        <span class="d-none d-sm-inline"> Correos notificaciones</span>
+                    </small>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link px-2 text-truncate text-white text-decoration-none" onclick="salir()">
+                    <small>
+                        <i class="icon-logout"></i>
+                        <span class="d-none d-sm-inline"> Salir</span>
+                    </small>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        let level="<%- level %>";
+        let salir=()=> manualLogout(level);
+    </script>
+</nav>

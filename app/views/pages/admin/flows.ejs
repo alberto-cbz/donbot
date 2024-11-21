@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <%- include('../../partials/head'); %>
+
+        <!-- css -->
+        <% if(typeof sheets!=='undefined') { %>
+            <% for(let sheet of sheets) { %>
+                <link href="/css/<%= sheet %>.css" rel="stylesheet">
+            <% } %>
+        <% } %>
+    </head>
+
+    <body class="h-100">
+        <%- include('../../partials/header'); %>
+
+        <div class="container-fluid pb-3 h-100" style="padding-top: 90px;">
+            <div class="row w-100 h-100" style="flex-wrap:nowrap">
+                <%- include('../../partials/sidebar', {level:''}); %>
+
+                <main id="main-content" class="col overflow-auto">
+                    <div class="row">
+                        <div class="col">
+                            <h5>
+                                <i class="icon-fork"></i>
+                                Flujos
+                            </h5>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <form id="button-container" class="col-9">
+                            <div class="btn-group btn-group-sm" role="group" aria-label="radio toggle button group">
+                                <input type="radio" class="btn-check" name="btnradio" id="btn-producto-sku" value="productosku" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="btn-producto-sku">Ordenes</label>
+
+                                <!-- <input type="radio" class="btn-check" name="btnradio" id="btn-precios" value="precios" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btn-precios">Precios</label>
+
+                                <input type="radio" class="btn-check" name="btnradio" id="btn-inventario" value="inventario" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btn-inventario">Inventario</label>
+
+                                <input type="radio" class="btn-check" name="btnradio" id="btn-especificaciones" value="especificaciones" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btn-especificaciones">Especificaciones</label> -->
+                            </div>
+                        </form>
+
+                        <div class="col-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="live-switch">
+                                <label class="form-check-label" for="switch">live</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="queues-container" class="row row-cols-2 row-cols-md-4 my-3 g-1"></div>
+                </main>
+            </div>
+        </div>
+        
+        <% if(typeof libs!=='undefined') { %>
+            <% for(let lib of libs) { %>
+                <script src='/js/<%= lib %>.js' type='text/javascript'></script>
+            <% } %>
+        <% } %>
+    </body>
+</html>

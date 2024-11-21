@@ -1,0 +1,4 @@
+Para correr el front/back:
+El comando a ekecutar es: yarn dev o en su defecto npm run dev
+La ruta de login es:
+El servicio para crear usuarios es:
